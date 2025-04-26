@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5DCBF621-0AF4-41EF-9DEB-5B2E6881AC05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2D203B43-072D-4B68-9955-F2E132404129}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2880297-8E8E-4441-BDBE-0668BC1A2B88}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargoTakip.Server.AppHost", "src\KargoTakip.Server.AppHost\KargoTakip.Server.AppHost.csproj", "{B859F42E-EC42-4875-B282-8955C01620E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargoTakip.Server.Application", "src\KargoTakip.Server.Application\KargoTakip.Server.Application.csproj", "{50CCB9C6-7E88-47AF-9BB4-B280A6B29ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargoTakip.Server.Domain", "src\KargoTakip.Server.Domain\KargoTakip.Server.Domain.csproj", "{441BE2F1-05EB-45BB-9143-725E894DE4A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargoTakip.Server.Infrastructure", "src\KargoTakip.Server.Infrastructure\KargoTakip.Server.Infrastructure.csproj", "{1BFD5564-5CF4-46FB-9FDB-523CA7C06297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargoTakip.Server.ServiceDefaults", "src\KargoTakip.Server.ServiceDefaults\KargoTakip.Server.ServiceDefaults.csproj", "{1DEBA0EB-3E99-40DB-B1F6-8A1F9C9B8B78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KargoTakip.Server.WebAPI", "src\KargoTakip.Server.WebAPI\KargoTakip.Server.WebAPI.csproj", "{CF41A95C-FE79-4F54-A3CB-0D2D2E2A65A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B859F42E-EC42-4875-B282-8955C01620E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B859F42E-EC42-4875-B282-8955C01620E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B859F42E-EC42-4875-B282-8955C01620E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B859F42E-EC42-4875-B282-8955C01620E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CCB9C6-7E88-47AF-9BB4-B280A6B29ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CCB9C6-7E88-47AF-9BB4-B280A6B29ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CCB9C6-7E88-47AF-9BB4-B280A6B29ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CCB9C6-7E88-47AF-9BB4-B280A6B29ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{441BE2F1-05EB-45BB-9143-725E894DE4A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441BE2F1-05EB-45BB-9143-725E894DE4A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441BE2F1-05EB-45BB-9143-725E894DE4A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441BE2F1-05EB-45BB-9143-725E894DE4A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BFD5564-5CF4-46FB-9FDB-523CA7C06297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BFD5564-5CF4-46FB-9FDB-523CA7C06297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BFD5564-5CF4-46FB-9FDB-523CA7C06297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BFD5564-5CF4-46FB-9FDB-523CA7C06297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DEBA0EB-3E99-40DB-B1F6-8A1F9C9B8B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DEBA0EB-3E99-40DB-B1F6-8A1F9C9B8B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DEBA0EB-3E99-40DB-B1F6-8A1F9C9B8B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DEBA0EB-3E99-40DB-B1F6-8A1F9C9B8B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF41A95C-FE79-4F54-A3CB-0D2D2E2A65A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF41A95C-FE79-4F54-A3CB-0D2D2E2A65A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF41A95C-FE79-4F54-A3CB-0D2D2E2A65A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF41A95C-FE79-4F54-A3CB-0D2D2E2A65A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B859F42E-EC42-4875-B282-8955C01620E9} = {5DCBF621-0AF4-41EF-9DEB-5B2E6881AC05}
+		{50CCB9C6-7E88-47AF-9BB4-B280A6B29ED2} = {5DCBF621-0AF4-41EF-9DEB-5B2E6881AC05}
+		{441BE2F1-05EB-45BB-9143-725E894DE4A9} = {5DCBF621-0AF4-41EF-9DEB-5B2E6881AC05}
+		{1BFD5564-5CF4-46FB-9FDB-523CA7C06297} = {5DCBF621-0AF4-41EF-9DEB-5B2E6881AC05}
+		{1DEBA0EB-3E99-40DB-B1F6-8A1F9C9B8B78} = {5DCBF621-0AF4-41EF-9DEB-5B2E6881AC05}
+		{CF41A95C-FE79-4F54-A3CB-0D2D2E2A65A6} = {5DCBF621-0AF4-41EF-9DEB-5B2E6881AC05}
+	EndGlobalSection
+EndGlobal

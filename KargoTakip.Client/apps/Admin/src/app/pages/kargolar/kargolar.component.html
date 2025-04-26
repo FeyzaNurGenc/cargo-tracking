@@ -1,0 +1,71 @@
+<!-- app blank de oluşturulan pageTitle burada selector içinde kullanıldı  -->
+<app-blank pageTitle="Kargolar">   
+   <!-- burada kullanılan flexi grid bir çeşit form yapısı componentte import ettik -->
+   <flexi-grid 
+   [data]="data()!" 
+   [dataBinding]="true" 
+   [total]="total()!"
+   [loading]="loading()"
+   [showCaption]="true" 
+   captionTitle="Kargo Listesi"
+   (dataStateChange)="dataStateChange($event)"
+   [showExportExcelBtn]="true"
+   [exportExcelButtonClick]="exportExcel.bind(this)"
+   language="tr"
+   commandColumnWidth="150px"
+   >
+   <ng-template flexiGridCaptionCommandTemplate="" >
+    <flexi-button routerLink="/kargolar/create"  btnSize="small" btnColor="primary" title="Kargo Ekle" flexiTooltip btnIcon="add" />
+ </ng-template>
+
+   <flexi-grid-column field="createAt" title="Kayıt Tarihi" filterType="date" format="dd MMM yyyy HH:mm:ss">
+      <ng-template flexiGridFooterTemplate let-data>
+         <span>Toplam</span>
+      </ng-template>
+   </flexi-grid-column>
+   <flexi-grid-column field="gonderenFullName" title="Gönderen adı"></flexi-grid-column>
+   <flexi-grid-column field="aliciFullName" title="Alıcı adı"></flexi-grid-column>
+   <flexi-grid-column field="teslimAdresiCity" title="Teslim Şehir"></flexi-grid-column>
+   <flexi-grid-column field="teslimAdresiTown" title="Teslim İlçe"></flexi-grid-column>
+   <flexi-grid-column field="kargoTipiName" title="Kargo Tipi"></flexi-grid-column>
+   <flexi-grid-column field="agirlik" title="Ağırlık (kg)">
+      <ng-template flexiGridFooterTemplate>
+          <span>{{getAgirlikTotal()}}</span>
+      </ng-template>
+   </flexi-grid-column>
+   <flexi-grid-column field="kargoDurumValue" title="Kargo Durumu" textAlign="center" filterType="select" [filterData]="durumFilterData()" width="200px">
+      <ng-template flexiGridCellTemplate let-item>
+          <span class="alert" [ngClass]="getDurumClass(item.kargoDurumName)" style="padding: 5px; border-width: 1px; border-color: #ccc;">{{item.kargoDurumName}}</span>
+      </ng-template>
+   </flexi-grid-column>
+   <flexi-grid-column field="createUserName" title="Kaydeden Kul."></flexi-grid-column>
+   <flexi-grid-column field="updateAt" title="Güncelleme Tar." filterType="date" format="dd MMM yyyy HH:mm:ss"></flexi-grid-column>
+   <flexi-grid-column field="updateUserName" title="Güncelleyen Kul."></flexi-grid-column>
+  
+   <ng-template flexiGridColumnCommandTemplate let-item>
+      <flexi-button btnSize="small" btnColor="info" btnIcon="rotate_90_degrees_ccw" title="Durum Değiştir" flexiTooltip (click)="openUpdateDurumPopup(item)"> </flexi-button>
+      @if(item.kargoDurumValue === 0){
+       <flexi-button btnSize="small" btnColor="primary" btnIcon="edit" title="Güncelle" flexiTooltip routerLink="/kargolar/edit/{{item.id}}"/>
+       <flexi-button btnSize="small" btnColor="danger" btnIcon="delete" title="Sil" flexiTooltip (click)="delete(item)"/>
+   }
+
+</ng-template>
+
+</flexi-grid>
+</app-blank>
+     
+<flexi-popup popupTitle="Kargo Durum Güncelle" 
+[(isPopupVisible)]="isPopupVisible" 
+[loading]="popupLoading()" 
+(onSave)="updateDurum()"
+saveBtnText="Durumu Güncelle"
+saveBtnIcon="edit">
+   <div class="form-group">
+      <label >Durum</label>
+      <select class="form-control" [(ngModel)]="durumUpdateRequest().durumValue">
+         @for(durum of durumFilterData(); track durum.value){
+                <option [value]="durum.value">{{durum.name}}</option>
+         }
+      </select>
+   </div>
+</flexi-popup>
